@@ -54,11 +54,11 @@ var retrieveAllListings = function() {
   /* 
     Retrieve all listings in the database, and log them to the console. 
    */
-   Listing.find({}, function(err, users) {
+   Listing.find({}, function(err, locations) {
     if (err) throw err;
   
     // object of all the users
-    console.log(users);
+    console.log(locations, {'maxArrayLength': null});
   });
 
 };
