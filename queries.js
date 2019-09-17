@@ -2,7 +2,8 @@
 var mongoose = require('mongoose'), 
 Schema = mongoose.Schema, 
 Listing = require('./ListingSchema.js'), 
-config = require('./config');
+config = require('./config'),
+util = require('util');
 
 /* Connect to your database using mongoose - remember to keep your key secret*/
 mongoose.connect(config.db.uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -58,7 +59,7 @@ var retrieveAllListings = function() {
     if (err) throw err;
   
     // object of all the users
-    console.log(locations, {'maxArrayLength': null});
+    console.log(util.inspect(locations, {maxArrayLength: null}));
   });
 
 };
